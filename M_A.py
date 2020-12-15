@@ -19,9 +19,6 @@ speed_b = 20
 # Wall-e
 image = '1-MLOGb4V-pwtwDT-lnohTFg.bmp'
 
-# Smoke
-image1 = 'pngs/smoke.png'
-image1_0 = pygame.image.load(image1)
 
 # Initialize
 pygame.init()
@@ -30,20 +27,19 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 
 # Background image
-background = pygame.image.load('Space-Invaders-Pygame-master/background.png')
+background = pygame.image.load('background.png')
 
 # Background music
-mixer.music.load('Songs/normal-music.wav')
+mixer.music.load('normal-music.wav')
 mixer.music.play(-1)
 
-# Winner background
-w_background = pygame.image.load('pngs/pages/Untitled.png')
+
 
 # Icon for game
-icon = pygame.image.load('pngs/joystick.png')
+icon = pygame.image.load('joystick.png')
 
 # Ship
-ship = pygame.image.load('pngs/ships/spaceship.png')
+ship = pygame.image.load('spaceship.png')
 
 # Aliens
 Alien_image = []
@@ -54,7 +50,7 @@ enemyY_change = []
 number_of_enemies = 7
 for i in range(number_of_enemies):
     # Alien Image
-    Alien_image.append(pygame.image.load('pngs/enemys/ship.png'))
+    Alien_image.append(pygame.image.load('ship.png'))
     # The aliens' random starting point
     enemyX.append(random.randint(0, 735))
     enemyY.append(50)
@@ -63,7 +59,7 @@ for i in range(number_of_enemies):
     enemyY_change.append(40)
 
 # The bullet
-bullet_image = pygame.image.load('pngs/bullet.png')
+bullet_image = pygame.image.load('bullet.png')
 
 # The main game area's that are covered
 pygame.display.set_caption('©🌌Space Master☄©')
@@ -85,33 +81,16 @@ running = True
 
 # Score
 score_value = 0
-font = pygame.font.Font('Fonts/GOUDYSTO.ttf', 20)
+font = pygame.font.Font('GOUDYSTO.ttf', 20)
 textX = 10
 textY = 10
 
-# You win
-you_win = pygame.image.load('pngs/pages/Untitled.png')
-
-# Smoke coordinate's
-smokeX = 0
-smokeY = 0
 
 
-def smoke(x, y):
-    g = playerX + 5
-    smokeX = g
-    smokeY = playerY
-    screen.blit(image1_0, (x, y))
 
 
 def choose():
     pass
-
-
-def show_you_win():
-    screen.blit(you_win, 0, 0)
-    '''for event in pygame.event:
-        if event.key == pygame.K_r:'''
 
 
 # Score display
@@ -269,7 +248,7 @@ while running:
         # Collision with bullet
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            explosion_sound = mixer.Sound('Space-Invaders-Pygame-master/explosion.wav')
+            explosion_sound = mixer.Sound('explosion.wav')
             explosion_sound.play()
             bulletY = 480
             bullet_state = "ready"
