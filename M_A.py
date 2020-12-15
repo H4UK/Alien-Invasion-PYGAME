@@ -157,12 +157,12 @@ while running:
 
             if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                 playerX_change = speed_s
-                smoke(smokeX, smokeY)
+
                 print("PRESSED RIGHT")
 
             if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                 playerX_change = -speed_s
-                smoke(smokeX, smokeY)
+
                 print("PRESSED LEFT")
 
             if event.key == pygame.K_q:
@@ -170,12 +170,12 @@ while running:
 
             if event.key == pygame.K_UP or event.key == pygame.K_w:
                 playerY_change = -speed_s
-                smoke(smokeX, smokeY)
+
                 print("PRESSED UP")
 
             if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                 playerY_change = speed_s
-                smoke(smokeX, smokeY)
+
                 print("PRESSED DOWN")
 
             if event.key == pygame.K_c:
@@ -197,19 +197,19 @@ while running:
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT or event.key == pygame.K_LEFT:
-                smoke(smokeX, smokeY)
+
                 playerX_change = 0
 
             if event.key == pygame.K_UP or event.key == pygame.K_DOWN:
-                smoke(smokeX, smokeY)
+
                 playerY_change = 0
 
             if event.key == pygame.K_a or event.key == pygame.K_d:
-                smoke(smokeX, smokeY)
+
                 playerX_change = 0
 
             if event.key == pygame.K_w or event.key == pygame.K_s:
-                smoke(smokeX, smokeY)
+
                 playerY_change = 0
 
     # Player movements
