@@ -16,9 +16,6 @@ speed_a = 3
 # Bullet speed
 speed_b = 20
 
-# Wall-e
-image = '1-MLOGb4V-pwtwDT-lnohTFg.bmp'
-
 
 # Initialize
 pygame.init()
@@ -186,7 +183,7 @@ while running:
 
             if event.key == pygame.K_SPACE:
                 if bullet_state == 'ready':
-                    bullet_sound = mixer.Sound('Space-Invaders-Pygame-master/laser.wav')
+                    bullet_sound = mixer.Sound('laser.wav')
                     bullet_sound.play()
                     bulletX = playerX
                     fire_bullet(bulletX, bulletY)
